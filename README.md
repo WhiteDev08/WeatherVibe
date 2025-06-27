@@ -2,7 +2,6 @@
 
 Welcome to **WeatherVibe**, an intelligent web app that doesn’t just show weather — it **tells you what to do** with it! Powered by **Groq's blazing-fast Gemma model** and **OpenWeatherMap API**, this app suggests the best activities based on live weather conditions 🌍.
 
-
 ---
 
 ## 🚀 Features
@@ -40,8 +39,6 @@ Switch themes effortlessly based on your system or preference.
 
 ![image](https://github.com/user-attachments/assets/e71e0b36-30ad-4a4f-81bc-7ae9d599432a)
 
-
-
 ---
 
 ## 🛠️ Setup Instructions
@@ -57,16 +54,38 @@ cd weathervibe
 npm install
 ```
 
-### 3. Add Your API Key
-Create a `.env` file in the root folder:
+### 3. Add API Keys (OpenWeather & Groq)
+Create a `.env` file in the root folder with the following content:
 
 ```env
 VITE_OPENWEATHER_API_KEY=your_openweather_api_key_here
+VITE_GROQ_API_KEY=your_groq_api_key_here
 ```
 
-### 4. Start the App
+If you're also using FastAPI as a backend, create a separate `.env` in the backend directory:
+
+```env
+GROQ_API_KEY=your_groq_api_key_here
+OPENWEATHER_API_KEY=your_openweather_api_key_here
+```
+
+> 💡 You can get your Groq API key from https://console.groq.com/keys
+
+### 4. Start the Development Server
 ```bash
 npm run dev
+```
+
+### 5. Optional: Start Backend (FastAPI)
+If you are using the backend agent orchestration:
+```bash
+cd backend
+uvicorn main:app --reload
+```
+
+### 6. Build for Production
+```bash
+npm run build
 ```
 
 ---
@@ -98,12 +117,11 @@ Feel free to open an [issue](https://github.com/your-username/weathervibe/issues
 
 ## 📄 License
 
-MIT License © 2025 [Your Name]
+MIT License © 2025 Keshav
 
 ---
 
 ## 💌 Connect
 
-Made with 💜 by [Your Name]  
+Made with 💜 by Keshav  
 Let the weather decide your vibe ✨
-
